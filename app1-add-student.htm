@@ -1,0 +1,52 @@
+<div ng-controller="addStudentController">
+    <form name="form" class="css-form" >
+    <table align="center">
+				<tr>
+					<th colspan="2" align="center">Enter the below details</th>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="nameVal" ng-model="student.nameVal"
+						required /> <span style="color: red"
+						ng-show="form.nameVal.$dirty && form.nameVal.$invalid">
+							<span ng-show="form.nameVal.$error.required">Student
+								Name is required.</span>
+					</span></td>
+				</tr>
+				<tr>
+					<td>Student Id</td>
+					<td><input type="number" name="id" ng-model="student.id"
+						min="0" max="100" required /> <span style="color: red"
+						ng-show="form.id.$dirty && form.id.$invalid">
+							<span ng-show="form.id.$error.required">Student Id
+								is required.</span>
+					</span></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td><input type="number" name="mark2Val" ng-model="student.age"
+						min="3" max="100" required /> <span style="color: red"
+						ng-show="form.age.$dirty && form.age.$invalid">
+							<span ng-show="form.age.$error.required">Age
+								is required.</span>
+					</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Save"
+						ng-click="update(student)"
+						ng-disabled="form.nameVal.$dirty && form.nameVal.$invalid ||  
+										form.id.$dirty && form.id.$invalid ||  
+										form.age.$dirty && form.age.$invalid " />
+					</td>
+				</tr>
+			</table>
+    </form>   
+</div>
+<style type="text/css">
+  .css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+  .css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
+</style>

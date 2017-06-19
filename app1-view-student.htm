@@ -1,0 +1,8 @@
+<div ng-controller="viewStudentController">
+<h2>Student Details</h2>
+<table>
+    <tr ng-repeat="student in students track by $index">
+        <td>{{student.nameVal}}</td><td>{{student.id}}</td><td>{{student.age}}</td>
+    </tr>
+</table> 
+</div>
